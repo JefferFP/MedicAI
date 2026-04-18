@@ -1,0 +1,4 @@
+echo "backend/.env" > .gitignore
+echo ".env" >> .gitignore
+echo "node_modules/" >> .gitignore
+echo "__pycache__/" >> .gitignore
