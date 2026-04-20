@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import {
-  MessageSquare, Users, CalendarDays, FolderClock, Stethoscope, Settings,
+  MessageSquare, Users, Settings,
 } from 'lucide-react';
 import logoMedicAI from '../../img/logo-medica.png';
 
@@ -14,12 +14,9 @@ type NavItem = {
 const navigation: NavItem[] = [
   { to: '/chatbot',         label: 'Chatbot IA',        icon: MessageSquare, group: 'Asistencia' },
   { to: '/pacientes',       label: 'Pacientes',         icon: Users,         group: 'Gestión' },
-  { to: '/calendario',      label: 'Calendario',        icon: CalendarDays,  group: 'Gestión' },
-  { to: '/historialtriaje', label: 'Historial Triaje',  icon: FolderClock,   group: 'Clínica' },
-  { to: '/historialmedico', label: 'Historial Médico',  icon: Stethoscope,   group: 'Clínica' },
 ];
 
-const groupOrder = ['Asistencia', 'Gestión', 'Clínica'];
+const groupOrder = ['Asistencia', 'Gestión'];
 
 export const Sidebar = () => {
   return (

@@ -3,11 +3,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.database import engine, Base
-from app.models import (  # noqa: F401  (registra los modelos en Base.metadata)
-    Usuario, Paciente, Medico, Cita, ConsultaTriaje, HistorialClinico, MedicamentoRecetado
+from app.models import (  # noqa: F401
+    Usuario, Paciente, Conversacion, Mensaje
 )
-from app.routers import pacientes, usuarios, medicos, citas, triaje, historial
-
+from app.routers import pacientes, usuarios, chatbot
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s - %(message)s",
@@ -37,10 +36,7 @@ app.add_middleware(
 
 app.include_router(usuarios.router)
 app.include_router(pacientes.router)
-app.include_router(medicos.router)
-app.include_router(citas.router)
-app.include_router(triaje.router)
-app.include_router(historial.router)
+app.include_router(chatbot.router)
 
 
 @app.get("/", tags=["Health"])
